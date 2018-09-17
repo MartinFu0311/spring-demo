@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <!-- 属性，优先级最低 -->
+  <!-- <properties>
+  	<property name="driver" value="com.mysql.jdbc.Driver"/>
+  </properties> -->
+  <!-- 读取外部 properties 文件， 会覆盖 properties 元素内指定的属性 -->
+  <properties resource="jdbc.properties" />
+  
+  <!-- 设置 -->
+  <settings>
+  	<!-- 配置所有映射器中的缓存全局开关。默认值为 true 。 -->
+  	<setting name="cacheEnabled" value="true"/>
+  	
+  	<!-- 延迟加载的全局开关，开启时，所有关联对象都会延迟加载，特定关联关系中可以通过 fetchType 属性来覆盖该选项的开关状态 。 默认值为 false。-->
+  	<setting name="lazyLoadingEnabled" value="false"/>
+  	
+  	<!-- 启用时，对任意延迟属性的调用会使带有延迟加载属性的对象完整加载；反之，各种属性按需加载。默认值为 true。 -->
+  	<setting name="aggressiveLazyLoading" value="true"/>
+  	
+  	<!-- 是否允许单一语句返回多个结果集（需要兼容驱动）。默认值为 true。 -->
+  	<setting name="multipleResultSetsEnabled" value="true"/>
+  	
+  	<!-- 允许 JDBC 支持自动生成主键，需要驱动兼容。如果为 true ，强制使用自动生成主键，尽管一些驱动不能兼容但仍可正常工作。默认值为 false。 -->
+  	<setting name="useGeneratedKeys" value="false"/>
+  	
+  	<!-- 如何自动映射列到字段或属性。 NONE 表示取消自动映射； PARTIAL 只会自动映射没有定义嵌套结果集映射的结果集；FULL 会自动映射
+  		任意复杂的结果集（无论是否嵌套，会降低性能）。默认值为 PARTIAL。 -->
+  	<setting name="autoMappingBehavior" value="PARTIAL"/>
+  	
+  	<!-- 是否开启自动驼峰命名映射规则，默认值为 false -->
+  	<setting name="mapUnderscoreToCamelCase" value="false"/>
+  	
+  	<!-- 配置默认的执行器。SIMPLE 是普通的执行器，REUSE 执行器会重用预处理语句，BATCH 执行器将重用语句并执行批量更新 。默认值为 SIMPLE.  -->
+  	<setting name="defaultExecutorType" value="SIMPLE"/>
+  	
+  	<!-- 设置超时时间。没有设置的时候取的就是驱动默认的时间。 -->
+  	<!-- <setting name="defaultStatementTimeout" value=""/> -->
+  </settings>
+  
+  <!-- 类型别名。接卸文件时生成 typeAliases 的实例，然后长期存放在 Configuration 对象中。 -->  
+  <typeAliases>
+  	<!-- 单独对每个实体进行定义的方式 -->
+  	<!-- <typeAlias alias="user" type="mybatis.martin.domain.User"/> -->
+  	
+  	<!-- POJO 很多的情况，自动扫描，结合注解 @Alias，包里没有注解的也会加载，别名就是类名的第一个字母小写 -->
+  	<package name="spring.martin.pojo"/>
+  </typeAliases>
+  
+  <!-- 对象工厂 -->
+  <!-- <objectFactory type=""></objectFactory> -->
+  
+  <!-- 插件 -->
+  <!-- <plugins></plugins> -->
+  
+  <!-- 数据库厂商标识 -->
+  <!-- <databaseIdProvider type=""></databaseIdProvider> -->
+  
+  <!-- 映射器 -->
+  <mappers>
+    <mapper resource="spring/martin/mapper/RoleMapper.xml"/>
+  </mappers>
+</configuration>

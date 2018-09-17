@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/spring-framework-5.0.5.RELEASE/libs/spring-aop-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/spring-framework-5.0.5.RELEASE/libs/spring-aspects-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/spring-framework-5.0.5.RELEASE/libs/spring-beans-5.0.5.RELEASE.jar" sourcepath="E:/Repository/Framework/java/spring-framework-5.0.5.RELEASE/libs/spring-beans-5.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/spring-framework-5.0.5.RELEASE/libs/spring-context-5.0.5.RELEASE.jar" sourcepath="E:/Repository/Framework/java/spring-framework-5.0.5.RELEASE/libs/spring-context-5.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/spring-framework-5.0.5.RELEASE/libs/spring-context-support-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/spring-framework-5.0.5.RELEASE/libs/spring-core-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/spring-framework-5.0.5.RELEASE/libs/spring-expression-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/spring-framework-5.0.5.RELEASE/libs/spring-jdbc-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/apache commons/commons-logging-1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/aspectj1.9/lib/aspectjrt.jar"/>
+	<classpathentry kind="lib" path="C:/aspectj1.9/lib/aspectjweaver.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/mybatis-3.4.4.jar" sourcepath="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/mybatis-3.4.4-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/lib/ant-1.9.6.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/lib/ant-launcher-1.9.6.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/lib/asm-5.2.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/lib/cglib-3.2.5.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/lib/javassist-3.21.0-GA.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/lib/log4j-api-2.3.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/lib/log4j-core-2.3.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/lib/ognl-3.1.14.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-3.4.4/lib/slf4j-log4j12-1.7.25.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mybatis-3.4.4/mybatis-spring-1.3.2.jar" sourcepath="C:/Users/Martin/.m2/repository/org/mybatis/mybatis-spring/1.3.2/mybatis-spring-1.3.2-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/apache commons/commons-dbcp2-2.4.0/commons-dbcp2-2.4.0.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/apache commons/commons-pool2-2.6.0/commons-pool2-2.6.0.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/spring-framework-5.0.5.RELEASE/libs/spring-tx-5.0.5.RELEASE.jar" sourcepath="E:/Repository/Framework/java/spring-framework-5.0.5.RELEASE/libs/spring-tx-5.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Repository/Framework/java/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

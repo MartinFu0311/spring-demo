@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 启用 AspectJ 框架的自动代理 -->
+	<aop:aspectj-autoproxy />
+
+	<!-- 用于启动对 @Autowire 注解的使用，网上博客说 component-scan 包含了此注解，因此这里不需要先注释了 -->
+	<!-- <context:annotation-config /> -->
+
+	<context:component-scan base-package="spring.martin.mapper" />	
+	<context:component-scan base-package="spring.martin.aop.service" />
+
+    <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/demo" />
+        <property name="username" value="root" />
+        <property name="password" value="Test123" />
+    </bean> -->
+    
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+    	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+    	<property name="url" value="jdbc:mysql://localhost:3306/demo" />
+    	<property name="username" value="root" />
+    	<property name="password" value="Test123" />
+    	<property name="maxTotal" value="255" />
+    	<property name="maxIdle" value="5" />
+    	<!-- <property name="maxWait" value="10000" /> as DBCP2 don't has this property  --> <!-- 1 秒 = 1000 毫秒    1 毫秒 = 1000 微秒      1 微秒 = 1000 纳秒  -->
+    </bean>
+
+    <bean id="SqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:mybatis-config.xml" />
+    </bean>
+    
+    <!-- <bean class="org.mybatis.spring.SqlSessionTemplate">
+    	<constructor-arg ref="SqlSessionFactory" />
+    </bean> -->
+    
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    	<property name="basePackage" value="spring.martin.mapper" />
+    	<property name="SqlSessionFactoryBeanName" value="SqlSessionFactory" />
+    	<property name="annotationClass" value="org.springframework.stereotype.Repository" />
+    </bean>
+    
+    <!-- 事务管理器配置数据源事务 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <!-- 使用注解定义事务， 等同于 @EnableTransactionManagement -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <!-- more bean definitions go here -->
+
+</beans>
